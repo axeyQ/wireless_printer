@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        div {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 6px 12px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Print Service</h1>
+
+    <div>
+        <label for="printerSelect">Select Printer:</label>
+        <select id="printerSelect">
+            <option value="">--Select Printer--</option>
+        </select>
+    </div>
+
+    <div>
+        <h2>Add KOT Items</h2>
+        <input type="text" id="itemName" placeholder="Item Name" />
+        <input type="number" id="itemQty" placeholder="Quantity" min="1" />
+        <select id="itemPrinterSelect">
+            <option value="">--Select Printer--</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+        <button id="addItemButton">Add Item</button>
+    </div>
+
+    <div>
+        <h2>Current KOT Items</h2>
+        <table border="1" style="margin:10px 0px;">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Assigned Printer</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="kotTableBody">
+                <!-- Dynamic KOT items will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <button id="printReceiptButton">Print Receipt</button>
+        <button id="printKOTButton">Print KOT</button>
+    </div>
+
+    <!-- Include QZ Tray library -->
+    <script src="https://cdn.jsdelivr.net/npm/qz-tray@2.2.4/qz-tray.min.js"></script>
+    <!-- Include your printService.js -->
+    <script src="./printService.js"></script>
+</body>
+</html>
+
+
